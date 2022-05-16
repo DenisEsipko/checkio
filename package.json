@@ -1,0 +1,7 @@
+{
+  "name": "checkio",
+  "version": "1.0.0",
+  "dependencies": {
+    "@types/node": "^17.0.31"
+  }
+}
