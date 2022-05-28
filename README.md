@@ -12,3 +12,9 @@ Level HOME:
 5) Backward Each Word
 6) Bigger Price
 7) Between Markers
+8) Non-unique Elements
+9) Popular Words
+10) Second Index
+11) Sort Array by Element Frequency
+12) Split List
+13) All the Same
