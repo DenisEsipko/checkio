@@ -15,8 +15,6 @@ Input: Три аргумента. Все строки. Второй и трет�
 Output: Строка.
  */
 function betweenMarkers(text, begin, end) {
-    // return (-1 < text.indexOf(end) && text.indexOf(end) < text.indexOf(begin))
-    //     ? '' : text.split(begin)[text.split(begin).length-1].split(end)[0];
     var numStrt;
     var numEnd;
     var str = "";
@@ -33,6 +31,12 @@ function betweenMarkers(text, begin, end) {
     if (numEnd < numStrt - begin.length)
         return "";
     return text.substring(numStrt, numEnd);
+    //Ver 2
+    /*
+        const p1 = text.includes(begin) ? text.indexOf(begin) + begin.length : 0;
+        const p2 = text.includes(end) ? text.indexOf(end) : text.length;
+        return text.slice(p1, p2);
+     */
 }
 console.log('Example:');
 console.log(betweenMarkers('What is >apple<', '>', '<'), 'apple');
