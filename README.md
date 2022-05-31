@@ -18,3 +18,8 @@ Level HOME:
 11) Sort Array by Element Frequency
 12) Split List
 13) All the Same
+
+Level Scientific Expedition:
+---
+1) Absolute Sorting
+2) Goes Right After
