@@ -23,3 +23,10 @@ Level Scientific Expedition:
 ---
 1) Absolute Sorting
 2) Goes Right After
+3) Time Converter (24h to 12h)
+4) Sum by Type
+5) Bird Language
+6) Common Words
+7) Follow Instructions
+8) Pangram
+9) Caps Lock
