@@ -30,3 +30,9 @@ Level Scientific Expedition:
 7) Follow Instructions
 8) Pangram
 9) Caps Lock
+10) The Most Wanted Letter ( mostWanted.ts )
+11) Letter Queue ( no open, не открыт) ----
+12) Striped Words
+13) Conversion from CamelCase ( fromCamelCase.ts )
+14) Conversion into CamelCase ( toCamelCase.ts )
+15) Secret Message ( findMessage.ts )
