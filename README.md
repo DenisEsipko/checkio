@@ -36,3 +36,5 @@ Level Scientific Expedition:
 13) Conversion from CamelCase ( fromCamelCase.ts )
 14) Conversion into CamelCase ( toCamelCase.ts )
 15) Secret Message ( findMessage.ts )
+16) Remove Brackets
+17) Cipher Map (recallPassword.ts)
