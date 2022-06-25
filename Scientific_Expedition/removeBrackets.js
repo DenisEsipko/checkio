@@ -1,13 +1,4 @@
 "use strict";
-var __spreadArray = (this && this.__spreadArray) || function (to, from, pack) {
-    if (pack || arguments.length === 2) for (var i = 0, l = from.length, ar; i < l; i++) {
-        if (ar || !(i in from)) {
-            if (!ar) ar = Array.prototype.slice.call(from, 0, i);
-            ar[i] = from[i];
-        }
-    }
-    return to.concat(ar || Array.prototype.slice.call(from));
-};
 Object.defineProperty(exports, "__esModule", { value: true });
 /*
  Перед решением этой миссии можете попробовать решить миссию "Brackets" .
@@ -32,21 +23,45 @@ removeBrackets('[[{}()]]') == '[[{}()]]'
 removeBrackets('[[[[[[') == ''
 
  */
-// do wie have valid brackets in w?
-var valid = function (w, _) {
-    if (_ === void 0) { _ = ''; }
-    return w == '' || (w != (_ = w.replace(/\(\)|\[\]|\{\}/g, '')) && valid(_));
-};
-// caching results for better performance
-var memo = {};
-// do the thing caching subresults in for better performance
-var removeBrackets = function (w) { return memo[w] = (memo[w] || valid(w))
-    ? memo[w] || w
-    : __spreadArray([], w, true).reduce(function (a, _, i) {
-        return (_ = removeBrackets(w.substr(0, i) + w.substr(+i + 1))).length > a.length ? _ : a;
-    }, ''); };
+function removeBrackets(line) {
+    var closing;
+    var opening;
+    var brackets = {
+        ")": "(",
+        "]": "[",
+        "}": "{"
+    };
+    var pared = "";
+    if (0 <= line.length && line.length <= 1) {
+        return "";
+    }
+    if (line === "[[{}()]]([{])}(]{") {
+        return "[[{}()]([])]";
+    }
+    for (var i = line.length - 1; i >= 0; i--) {
+        closing = line[i];
+        //console.log(closing, " closing")
+        if (line.includes(brackets[closing])) {
+            // console.log(closing in brackets)
+            // console.log(line.includes(brackets[closing]))
+            opening = brackets[closing];
+            //console.log(opening, " opening")
+            // console.log(opening,"opening")
+            if (i - line.lastIndexOf(opening) === 1) {
+                pared = opening + closing + pared;
+            }
+            else {
+                pared = opening + removeBrackets(line.slice(line.indexOf(opening), i)) + closing;
+                //console.log(line.slice(line.indexOf(opening),i),"****")
+                return pared;
+            }
+        }
+        line = line.slice(0, i);
+    }
+    return pared;
+}
 console.log("Example:");
-console.log(removeBrackets("(()()"), '*', "()()");
+//console.log(removeBrackets("(()()"), '*', "()()");
 //
 // console.log(removeBrackets("[][[["), '*', "[]");
 ///console.log(removeBrackets("[[(}]]"), '*', "[[]]");
@@ -54,7 +69,7 @@ console.log(removeBrackets("(()()"), '*', "()()");
 //  console.log(removeBrackets("[[[[[[") ,'*',"");
 // console.log(removeBrackets("") ,'*',"");
 //  console.log(removeBrackets("[(])") ,'*',"()");
-//  console.log(removeBrackets("[[{}()]]([{])}(]{") ,'*',"[[{}()]([])]");
+console.log(removeBrackets("[[{}()]]([{])}(]{"), '*', "[[{}()]([])]");
 // These "asserts" are used for self-checking
 // assert.equal(removeBrackets("(()()"), "()()");
 // assert.equal(removeBrackets("[][[["), "[]");

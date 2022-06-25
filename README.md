@@ -38,3 +38,27 @@ Level Scientific Expedition:
 15) Secret Message ( findMessage.ts )
 16) Remove Brackets
 17) Cipher Map (recallPassword.ts)
+
+
+level Ice Base:
+---
+1) Find Quotes
+2) Long Repeat
+3) Roman Numerals
+
+level Electronic Station:
+---
+1) Sort by Extension
+2) Words Order
+3) All Upper II
+4) Ascending List
+5) Boolean Algebra
+6) Surjection Strings
+7) Unix Match. Part 1
+
+
+Level MINE:
+---
+1) Fizz Buzz
+2) Lightbulb Intro
+3) Lightbulb Start Watching
